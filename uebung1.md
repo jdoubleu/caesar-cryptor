@@ -60,6 +60,14 @@ Verwundbare Systeme[^7]:
 * NetBSD 5.0.2 (OpenSSL 1.0.1e)
 * OpenSUSE 12.2 (OpenSSL 1.0.1c)
 
+## Aufgbae 1.2
+### a)
+CVE-2017-5753 aka. Spectre[^8].
+
+Ursache zurückzuführen auf die Prozessor-Architektur[^8].
+
+Betroffene Unternehmen, siehe https://meltdownattack.com/#faq-advisory.
+
 [^1]: http://cve.mitre.org/about/index.html
 [^2]: http://cve.mitre.org/about/faqs.html#cve_entry_descriptions_created
 [^3]: http://cve.mitre.org/about/cve_and_nvd_relationship.html
@@ -67,3 +75,5 @@ Verwundbare Systeme[^7]:
 [^5]: https://cwe.mitre.org/about/index.html
 [^6]: https://cwe.mitre.org/data/definitions/126.html
 [^7]: http://heartbleed.com/
+[^8]: https://meltdownattack.com/
+[^9]: https://nvd.nist.gov/vuln/detail/CVE-2017-5753
