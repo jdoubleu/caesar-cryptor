@@ -138,7 +138,7 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.macosx.exe.debug.option.optimization.level.1922790617" name="Optimization Level" superClass="gnu.c.compiler.macosx.exe.debug.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option id="gnu.c.compiler.macosx.exe.debug.option.debugging.level.295476435" name="Debug Level" superClass="gnu.c.compiler.macosx.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.default" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.dialect.std.1289382486" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.misc.other.1025338405" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -masm=intel -fno-unwind-tables -fno-asynchronous-unwind-tables" valueType="string"/>
+								<option id="gnu.c.compiler.option.misc.other.1025338405" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -masm=intel -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-stack-protector" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1143583538" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 						</toolChain>
@@ -179,7 +179,7 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.182168096" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.576596849" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.default" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.dialect.std.1962427382" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.misc.other.311503471" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -masm=intel -fno-unwind-tables -fno-asynchronous-unwind-tables" valueType="string"/>
+								<option id="gnu.c.compiler.option.misc.other.311503471" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -masm=intel -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-stack-protector" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1247634764" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool command="/Users/jdoubleu/Development/Workspace/itsec-uebung/misc/gdb_remote_debugging/wrapper.sh gcc" id="cdt.managedbuild.tool.gnu.c.linker.base.1501239175" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base">
@@ -227,7 +227,7 @@
 							<tool command="gcc" id="cdt.managedbuild.tool.gnu.c.compiler.base.418657855" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.206534910" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.1017166789" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.default" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.misc.other.1699185702" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -masm=intel -fno-unwind-tables -fno-asynchronous-unwind-tables" valueType="string"/>
+								<option id="gnu.c.compiler.option.misc.other.1699185702" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -masm=intel -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-stack-protector" valueType="string"/>
 								<option id="gnu.c.compiler.option.dialect.std.1934637065" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2045536433" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
