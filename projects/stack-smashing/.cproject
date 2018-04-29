@@ -278,6 +278,7 @@
 			<resource resourceType="PROJECT" workspacePath="/uebung-stack-smashing"/>
 		</configuration>
 		<configuration configurationName="Docker (internal)"/>
+		<configuration configurationName="DockerPlugin"/>
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/uebung-stack-smashing"/>
 		</configuration>
