@@ -33,7 +33,7 @@
 			</provider>
 		</extension>
 	</configuration>
-	<configuration id="cdt.managedbuild.config.gnu.macosx.exe.debug.972596879.1958348872.252421045" name="Docker">
+	<configuration id="cdt.managedbuild.config.gnu.macosx.exe.debug.972596879.1958348872.252421045" name="DockerManual">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
 			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
@@ -44,7 +44,7 @@
 			</provider>
 		</extension>
 	</configuration>
-	<configuration id="cdt.managedbuild.config.gnu.macosx.exe.debug.972596879.1958348872.1595781332" name="DockerPlugin">
+	<configuration id="cdt.managedbuild.config.gnu.macosx.exe.debug.972596879.1958348872.1595781332" name="Docker">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
 			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
