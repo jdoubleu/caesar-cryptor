@@ -34,7 +34,7 @@ function caesar_enc(block, key) {
 }
 
 function caesar_dec(block, key) {
-  return (block - key) % 26;
+  return (block - key + 26) % 26;
 }
 
 // ecb
