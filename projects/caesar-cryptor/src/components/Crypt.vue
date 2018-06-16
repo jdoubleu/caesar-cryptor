@@ -8,8 +8,8 @@
             <form>
               <div class="form-row">
                 <div class="form-group col-md-5">
-                  <label for="plaintext">Plaintext</label>
-                  <textarea id="plaintext" class="form-control" rows="8" v-model="plaintext"></textarea>
+                  <label for="inputtext">Plaintext</label>
+                  <textarea id="inputtext" class="form-control" rows="8" v-model="inputtext"></textarea>
                 </div>
                 <div class="form-group col-md-2">
                   <div class="form-row">
@@ -43,8 +43,8 @@
                   </div>
                 </div>
                 <div class="form-group col-md-5">
-                  <label for="ciphertext">Ciphertext</label>
-                  <textarea id="ciphertext" class="form-control" rows="8" readonly v-model="ciphertext"></textarea>
+                  <label for="outputtext">Ciphertext</label>
+                  <textarea id="outputtext" class="form-control" rows="8" readonly v-model="outputtext"></textarea>
                 </div>
                 <div class="form-group">
                   <button type="button" class="btn btn-success">🔒 Encrypt</button>
@@ -70,20 +70,20 @@ export default {
       key: 1,
       iv: 0,
 
-      plaintext: '',
+      inputtext: '',
     }
   },
   computed: {
-    ciphertext() {
+    outputtext() {
       const cipherfunc = lib[this.cipher + '_' + this.mode + '_enc'];
 
-      return this.plaintext ? cipherfunc(this.plaintext, this.key, this.iv) : '';
+      return this.inputtext ? cipherfunc(this.inputtext, this.key, this.iv) : '';
     }
   },
   watch: {
-    plaintext(value, oldValue) {
+    inputtext(value, oldValue) {
       if (!/^[a-zA-Z]*$/.test(value)) {
-        this.plaintext = oldValue;
+        this.inputtext = oldValue;
       }
     }
   }
