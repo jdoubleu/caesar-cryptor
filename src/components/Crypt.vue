@@ -79,6 +79,13 @@ export default {
 
       return cipherfunc(this.plaintext, this.key, this.iv);
     }
+  },
+  watch: {
+    plaintext(value, oldValue) {
+      if (!/^[a-zA-Z]*$/.test(value)) {
+        this.plaintext = oldValue;
+      }
+    }
   }
 }
 </script>
