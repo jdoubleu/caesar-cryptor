@@ -99,11 +99,12 @@ export default {
   methods: {
     toggleOp(val) {
       const oldValue = this.opEncrypt;
-      this.opEncrypt = !!val;
 
       if (oldValue != !!val) {
         this.inputtext = this.outputtext;
       }
+
+      this.opEncrypt = !!val;
     }
   }
 }
