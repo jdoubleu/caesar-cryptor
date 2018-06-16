@@ -91,7 +91,7 @@ function caesar_cbc_dec(cipher, key, iv) {
 
     lastCBLock = b;
 
-    return ciph;
+    return ciph % 26;
   });
 
   return byteArrayToText(plainBlocks);
