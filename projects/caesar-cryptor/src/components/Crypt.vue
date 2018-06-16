@@ -3,12 +3,18 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h1 class="card-header">Caesar Cipher</h1>
+          <div class="card-header">
+            <h1 class="card-title float-left">Caesar Cipher</h1>
+            <div class="btn-group float-right" role="group" aria-label="Operation">
+              <button type="button" :class="{'btn': true, 'btn-success': opEncrypt, 'btn-outline-success': !opEncrypt}" @click="toggleOp(true)">{{ buttonLabels[1] }}</button>
+              <button type="button" :class="{'btn': true, 'btn-danger': !opEncrypt, 'btn-outline-danger': opEncrypt}" @click="toggleOp(false)">{{ buttonLabels[0] }}</button>
+            </div>
+          </div>
           <div class="card-body">
             <form>
               <div class="form-row">
                 <div class="form-group col-md-5">
-                  <label for="inputtext">Plaintext</label>
+                  <label for="inputtext">{{ textLabels[!opEncrypt & 1] }}</label>
                   <textarea id="inputtext" class="form-control" rows="8" v-model="inputtext"></textarea>
                 </div>
                 <div class="form-group col-md-2">
@@ -39,15 +45,13 @@
                       </template>
                     </div>
                   </div>
-                  <div class="form-row">
-                  </div>
                 </div>
                 <div class="form-group col-md-5">
-                  <label for="outputtext">Ciphertext</label>
+                  <label for="outputtext">{{ textLabels[opEncrypt & 1] }}</label>
                   <textarea id="outputtext" class="form-control" rows="8" readonly v-model="outputtext"></textarea>
                 </div>
-                <div class="form-group">
-                  <button type="button" class="btn btn-success">🔒 Encrypt</button>
+                <div class="form-group text-right align-right col">
+                  <button type="button" class="btn btn-primary">{{ buttonLabels[opEncrypt & 1] }}</button>
                 </div>
               </div>
             </form>
@@ -65,6 +69,11 @@ export default {
   name: 'crypt',
   data () {
     return {
+      textLabels: ['Plaintext', 'Ciphertext'],
+      buttonLabels: ['🔓 Decrypt', '🔒 Encrypt'],
+
+      opEncrypt: true,
+
       cipher: 'caesar',
       mode: 'ecb',
       key: 1,
@@ -75,7 +84,7 @@ export default {
   },
   computed: {
     outputtext() {
-      const cipherfunc = lib[this.cipher + '_' + this.mode + '_enc'];
+      const cipherfunc = lib[this.cipher + '_' + this.mode + (this.opEncrypt ? '_enc' : '_dec')];
 
       return this.inputtext ? cipherfunc(this.inputtext, this.key, this.iv) : '';
     }
@@ -84,6 +93,16 @@ export default {
     inputtext(value, oldValue) {
       if (!/^[a-zA-Z]*$/.test(value)) {
         this.inputtext = oldValue;
+      }
+    }
+  },
+  methods: {
+    toggleOp(val) {
+      const oldValue = this.opEncrypt;
+      this.opEncrypt = !!val;
+
+      if (oldValue != !!val) {
+        this.inputtext = this.outputtext;
       }
     }
   }
