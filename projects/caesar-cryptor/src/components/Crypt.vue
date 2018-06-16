@@ -77,7 +77,7 @@ export default {
     ciphertext() {
       const cipherfunc = lib[this.cipher + '_' + this.mode + '_enc'];
 
-      return cipherfunc(this.plaintext, this.key, this.iv);
+      return this.plaintext ? cipherfunc(this.plaintext, this.key, this.iv) : '';
     }
   },
   watch: {
