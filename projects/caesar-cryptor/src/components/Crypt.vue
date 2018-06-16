@@ -59,6 +59,8 @@
 </template>
 
 <script>
+import * as lib from '../lib/crypt.js'
+
 export default {
   name: 'crypt',
   data () {
@@ -69,7 +71,13 @@ export default {
       iv: 0,
 
       plaintext: '',
-      ciphertext: '',
+    }
+  },
+  computed: {
+    ciphertext() {
+      const cipherfunc = lib[this.cipher + '_' + this.mode + '_enc'];
+
+      return cipherfunc(this.plaintext, this.key, this.iv);
     }
   }
 }
