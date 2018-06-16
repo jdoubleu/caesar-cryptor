@@ -2,6 +2,7 @@
 
 // helpers
 const _A = 'A'.charCodeAt(0);
+const _s = 256 + (' '.charCodeAt(0) - _A);
 
 function textToByteArray(text) {
   let textArray = text.toUpperCase()
@@ -42,7 +43,7 @@ function caesar_ecb_enc(plain, key) {
   [key] = fixKeyAndIv(key);
 
   const plainBlocks = textToByteArray(plain);
-  const cipherBlocks = plainBlocks.map(b => caesar_enc(b, key));
+  const cipherBlocks = plainBlocks.map(b => b == _s ? b : caesar_enc(b, key));
 
   return byteArrayToText(cipherBlocks);
 }
@@ -51,7 +52,7 @@ function caesar_ecb_dec(cipher, key) {
   [key] = fixKeyAndIv(key);
 
   const cipherBlocks = textToByteArray(cipher);
-  const plainBlocks = cipherBlocks.map(b => caesar_dec(b, key));
+  const plainBlocks = cipherBlocks.map(b => b == _s ? b : caesar_dec(b, key));
 
   return byteArrayToText(plainBlocks);
 }
@@ -64,7 +65,9 @@ function caesar_cbc_enc(plain, key, iv) {
 
   let lastEncBlock = iv;
 
-  const cipherBlocks = plainBlocks.map((b) => {
+  const cipherBlocks = plainBlocks.map(b => {
+    if (b == _s) return b;
+
     const input = b ^ lastEncBlock;
 
     return lastEncBlock = caesar_enc(input, key);
@@ -80,7 +83,9 @@ function caesar_cbc_dec(cipher, key, iv) {
 
   let lastCBLock = iv;
 
-  const plainBlocks = cipherBlocks.map((b) => {
+  const plainBlocks = cipherBlocks.map(b => {
+    if (b == _s) return b;
+
     const output = caesar_dec(b, key);
     const ciph = output ^ lastCBLock;
 
