@@ -28,11 +28,15 @@
                     </div>
                   </div>
                   <div class="form-row">
-                    <div class="form-group col-sm-6 col-md-4">
+                    <div class="form-group col-sm-6">
                       <label for="key">Key</label>
                       <input id="key" class="form-control" type="number" min="1" max="25" v-model="key"/>
                     </div>
-                    <div class="form-group col-sm-6 col-md-8">
+                    <div class="form-group col-sm-6">
+                      <template v-if="mode == 'cbc'">
+                        <label for="iv">IV</label>
+                        <input id="iv" class="form-control" type="number" min="0" max="25" v-model="iv"/>
+                      </template>
                     </div>
                   </div>
                   <div class="form-row">
@@ -62,6 +66,7 @@ export default {
       cipher: 'caesar',
       mode: 'ecb',
       key: 1,
+      iv: 0,
 
       plaintext: '',
       ciphertext: '',
