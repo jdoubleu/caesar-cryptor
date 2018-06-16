@@ -5,6 +5,7 @@
     </nav>
 
     <main class="container mt-4 mb-4">
+      <crypt/>
     </main>
 
     <footer id="main-footer">
@@ -19,11 +20,15 @@
 
 <script>
 import 'bootstrap/dist/css/bootstrap.css'
+import Crypt from './components/Crypt.vue'
 
 export default {
   name: 'app',
   data () {
     return {}
+  },
+  components: {
+    Crypt
   }
 }
 </script>
