@@ -44,6 +44,12 @@
                     </template>
                   </div>
                 </div>
+                <div class="form-row" v-if="mode == 'cbc'">
+                  <div class="form-group col form-inline">
+                    <input id="fips" class="form-control" type="checkbox" v-model="fips"/>
+                    <label for="fips">Use FIPS standard</label>
+                  </div>
+                </div>
               </div>
               <div class="form-group col-md-5">
                 <label for="outputtext">{{ textLabels[opEncrypt & 1] }}</label>
@@ -71,6 +77,7 @@ export default {
       buttonLabels: ['🔓 Decrypt', '🔒 Encrypt'],
 
       opEncrypt: true,
+      fips: true,
 
       cipher: 'caesar',
       mode: 'ecb',
@@ -84,7 +91,7 @@ export default {
     outputtext() {
       const cipherfunc = lib[this.cipher + '_' + this.mode + (this.opEncrypt ? '_enc' : '_dec')];
 
-      return this.inputtext ? cipherfunc(this.inputtext, this.key, this.iv) : '';
+      return this.inputtext ? cipherfunc(this.inputtext, this.key, this.iv, this.fips) : '';
     }
   },
   watch: {
