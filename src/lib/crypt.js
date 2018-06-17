@@ -89,11 +89,11 @@ function caesar_cbc_dec(cipher, key, iv, fips) {
     if (b == _s) return b;
 
     const output = caesar_dec(b, key);
-    const ciph = xmode(output, lastCBLock);
+    const plain = (26 + xmode(output, lastCBLock)) % 26;
 
     lastCBLock = b;
 
-    return ciph % 26;
+    return plain;
   });
 
   return byteArrayToText(plainBlocks);
