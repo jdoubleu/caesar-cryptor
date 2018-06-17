@@ -6,6 +6,7 @@
 
     <main class="container mt-4 mb-4 pb-5">
       <crypt/>
+      <attack/>
     </main>
 
     <footer id="main-footer">
@@ -21,6 +22,7 @@
 <script>
 import 'bootstrap/dist/css/bootstrap.css'
 import Crypt from './components/Crypt.vue'
+import Attack from './components/Attack.vue'
 
 export default {
   name: 'app',
@@ -28,7 +30,8 @@ export default {
     return {}
   },
   components: {
-    Crypt
+    Crypt,
+    Attack
   }
 }
 </script>
