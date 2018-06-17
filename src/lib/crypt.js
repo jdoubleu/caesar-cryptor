@@ -58,8 +58,9 @@ function caesar_ecb_dec(cipher, key) {
 }
 
 // cbc
-function caesar_cbc_enc(plain, key, iv) {
+function caesar_cbc_enc(plain, key, iv, fips) {
   [key, iv] = fixKeyAndIv(key, iv);
+  const xmode = (a,b) => !!fips ? a ^ b : a + b;
 
   const plainBlocks = textToByteArray(plain);
 
@@ -68,7 +69,7 @@ function caesar_cbc_enc(plain, key, iv) {
   const cipherBlocks = plainBlocks.map(b => {
     if (b == _s) return b;
 
-    const input = b ^ lastEncBlock;
+    const input = xmode(b, lastEncBlock);
 
     return lastEncBlock = caesar_enc(input, key);
   });
@@ -76,8 +77,9 @@ function caesar_cbc_enc(plain, key, iv) {
   return byteArrayToText(cipherBlocks);
 }
 
-function caesar_cbc_dec(cipher, key, iv) {
+function caesar_cbc_dec(cipher, key, iv, fips) {
   [key, iv] = fixKeyAndIv(key, iv);
+  const xmode = (a,b) => !!fips ? a ^ b : a - b;
 
   const cipherBlocks = textToByteArray(cipher);
 
@@ -87,7 +89,7 @@ function caesar_cbc_dec(cipher, key, iv) {
     if (b == _s) return b;
 
     const output = caesar_dec(b, key);
-    const ciph = output ^ lastCBLock;
+    const ciph = xmode(output, lastCBLock);
 
     lastCBLock = b;
 
