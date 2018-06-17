@@ -4,7 +4,7 @@
       <span class="navbar-brand mb-0 h1">Caesar Cryptor</span>
     </nav>
 
-    <main class="container mt-4 mb-4">
+    <main class="container mt-4 mb-4 pb-5">
       <crypt/>
     </main>
 
@@ -43,5 +43,13 @@ export default {
   line-height: 60px; /* Vertically center the text there */
   background-color: #f5f5f5;
   z-index: 200;
+}
+
+.row {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 </style>
