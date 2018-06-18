@@ -96,9 +96,7 @@ export default {
   },
   watch: {
     inputtext(value, oldValue) {
-      if (!/^[a-zA-Z\s]*$/.test(value)) {
-        this.inputtext = oldValue;
-      }
+      this.inputtext = value.replace(/[^a-zA-Z\s]/g, '');
     }
   },
   methods: {
