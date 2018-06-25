@@ -55,9 +55,6 @@
                 <label for="outputtext">{{ textLabels[opEncrypt & 1] }}</label>
                 <textarea id="outputtext" class="form-control" rows="8" readonly v-model="outputtext"></textarea>
               </div>
-              <div class="form-group text-right align-right col">
-                <button type="button" class="btn btn-primary">{{ buttonLabels[opEncrypt & 1] }}</button>
-              </div>
             </div>
           </form>
         </div>
