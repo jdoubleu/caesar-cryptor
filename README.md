@@ -2,6 +2,8 @@
 
 > A caeser cipher en- and decryption tool
 
+![Preview](preview.png)
+
 ## Build Setup
 
 ``` bash
